@@ -1,0 +1,182 @@
+/*Reset css*/
+
+*,
+::before,
+::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    height: 100vh;
+}
+
+body {
+    position: relative;
+    background-color: #f1f1f1;
+    font-family: "Lato", sans-serif;
+}
+
+
+.retry{
+	position: absolute;
+    top: -50px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: red;
+    
+}
+
+
+.login .wrapper {
+    width: 100%;
+    margin-bottom: 80px;
+}
+
+.login {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70%;
+    max-width: 450px;
+}
+
+.wrapper {
+    position: relative;
+    display: flex;
+    width: 100%;
+    /* flex-direction: column; */
+}
+.wrapper > input {
+    width: 100%;
+    border: 1px solid transparent;
+    outline: none;
+    border-radius: 10px;
+    padding: 1.2rem;
+}
+
+.wrapper label:first-child {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding-left: 1.2rem;
+    transition: all 0.3s ease-out;
+}
+.message {
+    position: absolute;
+    left: 5px;
+    top: 70px;
+    font-size: 13px;
+    color: red;
+    display: none;
+}
+.wrapper .password ~ .message {
+    top: 120px;
+}
+/* Animation */
+
+.wrapper:focus-within label:first-child,
+.wrapper.active label:first-child {
+    top: -24px;
+    padding-left: 2px;
+}
+
+.wrapper.active input {
+    border: 1px solid green;
+}
+
+.error {
+    border: 1px solid red !important;
+}
+.error ~ .message {
+    display: flex;
+}
+
+/* Switch */
+
+.switch {
+    position: absolute;
+    display: inline-block;
+    bottom: -10px;
+    left: 0;
+    transform: translateY(100%);
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+}
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+}
+input[type="checkbox"]:checked + .slider {
+    background-color: #8ff685;
+}
+input[type="checkbox"]:focus + .slider {
+    box-shadow: 0 0 5px #8ff685;
+}
+
+input[type="checkbox"]:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+.submit {
+    border: none;
+    margin-top: 50px;
+    padding: 20px;
+    background: #8ff685;
+    border-radius: 5px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #262525;
+    outline: none;
+    cursor: pointer;
+}
+
+
+.submit:disabled{
+	background: #ffd700;
+}
+.submit:focus,
+.submit:hover {
+    opacity: 0.85;
+    background: #8ff685aa;
+}
